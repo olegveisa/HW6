@@ -58,7 +58,10 @@ def sort_files(path: Path):
                 new_name.replace(path / "unknown" / new_name.name)
                 unknow_extensions.append(file.suffix)
 
-    return known_extensions, unknow_extensions
+    unique_known_extesions = list(set(known_extensions))
+    unique_unknow_extesions = list(set(unknow_extensions))
+
+    return unique_known_extesions, unique_unknow_extesions
 
 
 def delete_folders(path: Path):
